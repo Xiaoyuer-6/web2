@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script>
+        function myck(type) {
+            var input_username = jQuery("#username");
+            var input_pwd = jQuery("#pwd");
+            if(type== 1){//提交
+                if(input_username.val().trim() == ""){
+                    alert("请先输入用户名！");
+                    input_username.focus();//设置光标到输入框；
+                    return false;
+                }//接口后面讲
+                if(input_pwd.val().trim() == ""){
+                    alert("请先输入密码！");
+                    input_pwd.focus();
+                    return false;
+                }//接口后面讲
+                alert("登录成功");
+//非空效验
+            }else if (type== 2){//清空
+                if(confirm("是否清空数据")){
+
+
+                    input_username.val("");
+                    input_pwd.val("");
+                }
+            }
+
+        }
+    </script>
+
+
+</head>
+<body>
+<div style="text-align: center;margin-top:100px;margin-left: 50px";>
+
+    <h1>登录</h1>
+
+    <div>
+        <div class="innerDiv">
+            用户名: <input id="username" type= "text"   placeholder="请输入用户名"><p></p>
+        </div>
+    </div>
+
+    <div>
+        <div class="innerDiv" >
+            密 码&nbsp;: <input id="pwd" type= "text" placeholder="请输入密码"><p></p>
+        </div>
+    </div>
+    <input type="button" onclick="myck(1)" value="提 交">
+    <input type="button" onclick="myck(2)" value="清 空">
+
+</body>
+
+</html>

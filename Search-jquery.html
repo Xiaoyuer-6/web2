@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义搜索</title>
+    <Script src = jquery-1.9.1.min.js></Script>>
+    <script>
+        function mycli(type) {
+            var baidu_url = "https://www.baidu.com";
+            var sogou_url= "https://www.sogou.com";
+            var san_url = "https://www.so.com";
+            var ifm = jQuery("#ifm");
+            if(type==1){
+                ifm.attr("src".baidu_url);
+            }else if(type == 2){
+                ifm.attr("src",sogou_url);
+            }else if(type == 3){
+                ifm.attr("src",san_url);
+            }
+
+        }
+        </Script>
+</head>
+<body>
+搜 索:<input type="text"><p></p>
+<div>
+    <input type="button" onclick="mycli(1)" value="百度搜索">
+    <input type="button" onclick="mycli(2)" value="搜狗搜索">
+    <input type="button" onclick="mycli(3)" value="360搜索">
+
+</div>
+<iframe id = "ifm" style="width: 1000px;height: 500px" src = "https://www.baidu.com">
+
+</iframe>
+
+
+</body>
+</html>
